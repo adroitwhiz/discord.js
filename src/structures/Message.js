@@ -89,6 +89,12 @@ class Message {
     this.nonce = data.nonce;
 
     /**
+     * If this message is a reply, the message that it's replying to.
+     * @type {?Snowflake}
+     */
+    this.referencedMessage = data.referenced_message ? data.referenced_message.id : null;
+
+    /**
      * Whether or not this message was sent by Discord, not actually a user (e.g. pin notifications)
      * @type {boolean}
      */
